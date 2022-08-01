@@ -11,12 +11,8 @@
         <div class="row align-center mb-3">
           <app-input (newTaskEmit)="getNewTask($event)"></app-input>
         </div>
-        <div 
-        class="row align-center items-fram mt-2" 
-        *ngFor="let item of todoList; let i=index; trackBy: trackByFunc" 
-        [style.background-color]="i%2 == 0 ? 'rgb(223, 223, 223)' : 'rgb(217, 225, 238)'">
-          {{ i+1 + " . " + item}}
-        </div>
+
+        <app-list [todoList]="todoList" class="mt-2"></app-list>
       </div>
 
     </div>
