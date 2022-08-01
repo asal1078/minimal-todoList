@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todoList';
+  addingItem : string = '';
+  todoList : Array<string> = ['Starting a wonderfull day!'];
+
+  public trackByFunc(index: number , item: any) {
+    return item.index;
+  }
+
+  public addItem() {
+    let item = this.addingItem != '' ? this.addingItem : 'nothing!';
+    this.todoList.push(item);
+    this.addingItem = '';
+  }
 }
