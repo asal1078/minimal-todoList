@@ -1,0 +1,5 @@
+.btn::ng-deep {
+    border-radius: 5px 0px 0px 5px;
+    background-color: rgb(26, 26, 165);;
+    color: white;
+}
