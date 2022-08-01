@@ -12,7 +12,12 @@ export class InputComponent {
   @Output() newTaskEmit = new EventEmitter<string>();
 
   addItem() {
-    this.newTaskEmit.emit(this.addingItem);
+    if(this.addingItem != ''){
+      this.newTaskEmit.emit(this.addingItem);
+    }
+    else {
+      alert('your task cant be empty!')
+    }
     this.addingItem = '';
   }
 
