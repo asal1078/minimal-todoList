@@ -9,12 +9,16 @@
           </h3>
         </div>
         <div class="row align-center mb-3">
-          <app-input (newTaskEmit)="getNewTask($event)"></app-input>
+          <app-input (newTaskEmit)="getNewTask($event)" (showAlertEmit)="getAlertStatus($event)"></app-input>
         </div>
 
         <app-list [todoList]="todoList" class="mt-2"></app-list>
       </div>
 
+      
     </div>
   </div>
 </div>
+<app-alert [show]="showAlert">
+  <p class="alert-text">your task cant be empty (^_^)</p>
+</app-alert>
